@@ -84,10 +84,12 @@ class SimpleArmaRoller():
 
 @dataclass
 class KarmaRoller:
-    """_summary_
+    """
+    Implementations of various karma-based rolling methods utilizing a tracked "karma" metric
 
-    Returns:
-        _type_: _description_
+    "heat" is a multiplier on the result of the roll from a uniform distribution, and is applied before adding it to the result of the roll.
+
+    "streak" and "max_streak" are just used as metrics for now. 
     """
     karma: float = 0.0
     heat: float = 1.0
