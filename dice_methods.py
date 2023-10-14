@@ -210,10 +210,12 @@ class KarmaRoller:
         
         self.registerRoll(roll)
         return int((roll * sides) + 1)
-sides = 20
-kr = SimpleArmaRoller(-.5, np.array([.5, .25]))
-# kr = SimpleArmaRoller(0.0, 0.0)
-res = [kr.roll(sides) for i in range(20000)]
-plt.hist(np.diff(res), bins=sides)
-# plt.hist(list(np.diff(np.where(np.array(res) == 20))))
-plt.show()
+
+if __name__ == "__main__":
+    sides = 20
+    kr = SimpleArmaRoller(-.5, np.array([.5, .25]))
+    # kr = SimpleArmaRoller(0.0, 0.0)
+    res = [kr.roll(sides) for i in range(20000)]
+    plt.hist(np.diff(res), bins=sides)
+    # plt.hist(list(np.diff(np.where(np.array(res) == 20))))
+    plt.show()
